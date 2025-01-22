@@ -1,9 +1,9 @@
 export const tickets = [
     {
-        method: "GET",
+        method: "POST",
         path: "/tickets",
         controller: (request, response)=>{
-            response.end("criado com sucesso")
-        }
-    }
+            response.end("Criado com sucesso!")
+        },
+    },
 ]
