@@ -1,0 +1,13 @@
+{
+  "name": "support-tickets",
+  "version": "1.0.0",
+  "description": "API de gerenciamento de tickets de suporte.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [],
+  "author": "Pablo Henrique Ferreira de França",
+  "license": "ISC"
+}
