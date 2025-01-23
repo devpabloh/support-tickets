@@ -9,4 +9,4 @@ async function listener(request, response){
     routeHandler(request, response)
 }
 
-http.createServer(listener).listen(3334) // criando um servidor http na porta 3333
+http.createServer(listener).listen(3334) // criando um servidor http na porta 3334
