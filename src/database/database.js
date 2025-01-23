@@ -20,4 +20,20 @@ export class Database{
     fs.writeFile(DATABASE_PATH, JSON.stringify(this.#database)) // Aqui nós estamos reescrevendo o arquivo que é o primeiro parâmetro e no segundo parâmetro estamos passando ele de JSON para string, passando como base o nosso banco de dados.
   }
 
+  insert(table, data){
+    if(Array.isArray(this.#database[table])){ // se encontrar o parâmetro tabela dentro do banco de dados, faça isso
+      this.#database[table].push(data) // adicione os dados a essa tabela
+    }else{
+      this.#database[table] = [data]
+    }
+
+    this.#persist() // esse comando serve para chamar o método de persistir, para ficar tentando salvar os dados na tabela
+  }
+
+  select(table){
+    let data = this.#database[table] ?? [] 
+    
+    return data
+  }
+
 }
