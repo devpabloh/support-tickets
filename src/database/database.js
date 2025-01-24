@@ -35,10 +35,14 @@ export class Database{
 
     if(filters){
       data = data.filter((row)=>{
-        return row
+        
+        return Object.entries(filters).some(([key, value])=>{
+          return row[key].toLowerCase().includes(value.toLowerCase())
+        })
+
       })
     }
-    console.log(data)
+    
     return data
   }
 
