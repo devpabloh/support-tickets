@@ -30,9 +30,15 @@ export class Database{
     this.#persist() // esse comando serve para chamar o método de persistir, para ficar tentando salvar os dados na tabela
   }
 
-  select(table){
+  select(table, filters){
     let data = this.#database[table] ?? [] 
-    
+
+    if(filters){
+      data = data.filter((row)=>{
+        return row
+      })
+    }
+    console.log(data)
     return data
   }
 
