@@ -5,9 +5,9 @@ import { extractQueryParams } from "../utils/extractQueryParams.js";
 const database = new Database() // Aqui estamos criando uma nova instância do nosso banco de dados. Lembrar que sempre que usamos o new é porque estamos criando uma nova instância.
 
 export function routeHandler(request, response){
-    const route = routes.find((route)=>{
-        return route.method === request.method && route.path.test(request.url) 
-    })
+    const route = routes.find((route) => {
+        return route.method === request.method && route.path.test(request.url);
+    });
 
     if(route){
         const routeParams = request.url.match(route.path)
